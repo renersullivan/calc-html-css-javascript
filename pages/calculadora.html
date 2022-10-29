@@ -16,8 +16,8 @@
         <p id="resultado"></p>
         <table>
           <tr>
-            <td><button class="btn-calc" onclick="clean('   ')">C</button></td>
-            <td><button class="btn-calc"><</button></td>
+            <td><button class="btn-calc" onclick="clean('')">C</button></td>
+            <td><button class="btn-calc" onclick="back()"><</button></td>
             <td><button class="btn-calc" onclick="insert('/')">/</button></td>
             <td><button class="btn-calc" onclick="insert('x')">x</button></td>
           </tr>
@@ -38,7 +38,7 @@
             <td><button class="btn-calc" onclick="insert('3')">2</button></td>
             <td><button class="btn-calc" onclick="insert('2')">3</button></td>
             <td rowspan="2">
-              <button class="btn-calc-alt" onclick="insert('=')">=</button>
+              <button class="btn-calc-alt" onclick="calcular('=')">=</button>
             </td>
           </tr>
           <tr>
@@ -57,6 +57,20 @@
       }
       function clean() {
         document.getElementById("resultado").innerHTML = "";
+      }
+      function back() {
+        var resultado = document.getElementById("resultado").innerHTML;
+
+        document.getElementById("resultado").innerHTML = resultado.substring(
+          0,
+          resultado.length - 1
+        );
+      }
+      function calcular() {
+        var resultado = document.getElementById("resultado").innerHTML;
+        if (resultado) {
+          document.getElementById("resultado").innerHTML = eval(resultado);
+        }
       }
     </script>
   </body>
