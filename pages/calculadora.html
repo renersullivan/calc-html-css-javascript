@@ -16,34 +16,36 @@
         <p id="resultado"></p>
         <table>
           <tr>
-            <td><button class="btn-calc">C</button></td>
+            <td><button class="btn-calc" onclick="clean('   ')">C</button></td>
             <td><button class="btn-calc"><</button></td>
-            <td><button class="btn-calc">/</button></td>
-            <td><button class="btn-calc">x</button></td>
+            <td><button class="btn-calc" onclick="insert('/')">/</button></td>
+            <td><button class="btn-calc" onclick="insert('x')">x</button></td>
           </tr>
           <tr>
             <td><button class="btn-calc" onclick="insert('7')">7</button></td>
             <td><button class="btn-calc" onclick="insert('8')">8</button></td>
             <td><button class="btn-calc" onclick="insert('9')">9</button></td>
-            <td><button class="btn-calc">-</button></td>
+            <td><button class="btn-calc" onclick="insert('-')">-</button></td>
           </tr>
           <tr>
             <td><button class="btn-calc" onclick="insert('4')">4</button></td>
             <td><button class="btn-calc" onclick="insert('5')">5</button></td>
             <td><button class="btn-calc" onclick="insert('6')">6</button></td>
-            <td><button class="btn-calc">+</button></td>
+            <td><button class="btn-calc" onclick="insert('+')">+</button></td>
           </tr>
           <tr>
             <td><button class="btn-calc" onclick="insert('1')">1</button></td>
             <td><button class="btn-calc" onclick="insert('3')">2</button></td>
             <td><button class="btn-calc" onclick="insert('2')">3</button></td>
-            <td rowspan="2"><button class="btn-calc-alt">=</button></td>
+            <td rowspan="2">
+              <button class="btn-calc-alt" onclick="insert('=')">=</button>
+            </td>
           </tr>
           <tr>
             <td colspan="2">
               <button class="btn-calc-larg" onclick="insert('0')">0</button>
             </td>
-            <td><button class="btn-calc">.</button></td>
+            <td><button class="btn-calc" onclick="insert('.')">.</button></td>
           </tr>
         </table>
       </div>
@@ -52,6 +54,9 @@
       function insert(num) {
         var numero = document.getElementById("resultado").innerHTML;
         document.getElementById("resultado").innerHTML = numero + num;
+      }
+      function clean() {
+        document.getElementById("resultado").innerHTML = "";
       }
     </script>
   </body>
