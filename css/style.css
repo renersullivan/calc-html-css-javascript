@@ -33,6 +33,19 @@
 .btn-calc:hover {
   background-color: black;
 }
+.btn-calc-1 {
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 1.5625rem;
+  cursor: pointer;
+  background-color: rgb(31, 31, 31);
+  border: none;
+  color: white;
+  margin: 3px;
+}
+.btn-calc-1:hover {
+  background-color: red;
+}
 .btn-calc-alt {
   width: 3.125rem;
   height: 3.125rem;
